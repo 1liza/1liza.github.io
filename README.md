@@ -50,7 +50,7 @@ tags:
 
 ![img](img/post_guide.PNG)
 
-[这里](https://stackoverflow.com/questions/19086284/jekyll-liquid-templating-how-to-group-blog-posts-by-year/20777475#20777475)也有按照年或者月归类的方法**
+[这里](https://stackoverflow.com/questions/19086284/jekyll-liquid-templating-how-to-group-blog-posts-by-year/20777475#20777475)也有按照年或者月归类的方法
 
 ## 文档排序 ##
 文档排序默认是按照yaml 头文件中的date排序，格式是YYYY-MM-DD HH:MM:SS或者YYYY-MM-DD HH:MM:SS +/-TTTT。如果你在一天之内写了多篇博客的话，可以采用YYYY-MM-DD HH:MM:SS格式具体到小时来帮助排序。如果一天只有一篇的话，date可以不用具体到小时，直接YYYY-MM-DD就可以，但是月份和日期一定要是两位数。
