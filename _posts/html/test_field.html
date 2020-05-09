@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <script>
+      var scope = "global";
+      function fn(){
+         console.log(scope);//result:undefined
+         var scope = "local";
+         console.log(scope);//result:local;
+      }
+      fn();
+
+      for (var i=0; i<10; i++) {
+         continue;
+      }
+      console.log(i)//10
+   </script>
+</body>
+</html>
