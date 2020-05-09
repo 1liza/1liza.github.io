@@ -55,7 +55,7 @@ tags:
 ## 文档排序 ##
 文档排序默认是按照yaml 头文件中的date排序，格式是YYYY-MM-DD HH:MM:SS或者YYYY-MM-DD HH:MM:SS +/-TTTT。如果你在一天之内写了多篇博客的话，可以采用YYYY-MM-DD HH:MM:SS格式具体到小时来帮助排序。如果一天只有一篇的话，date可以不用具体到小时，直接YYYY-MM-DD就可以，但是月份和日期一定要是两位数。
 ## 博客设置 ##
-- 根目录下面index.html设置了主页面布局：paginator属性设置分页；```{% for post in paginator.posts %}```设置了每一个博客条目的内容显示和设置。可以看到index.html的yaml 头文件```layout: page```也就是采用了_layouts文件夹中page.html的布局，所以侧边栏设置可以在page.html文件中找到
+- 根目录下面index.html设置了主页面布局：paginator属性设置分页；```post in paginator.posts```设置了每一个博客条目的内容显示和设置。可以看到index.html的yaml 头文件```layout: page```也就是采用了_layouts文件夹中page.html的布局，所以侧边栏设置可以在page.html文件中找到
 - _layouts文件夹主要用来存放页面布局。可以看到文件夹里面有四个html文件，分别设置了page，post，keynote的页面布局，而这三个布局都继承了default.html的布局。default.html是jekyll自动生成的。
 - 找到设置布局位置之后，就需要修改liquid语句了。这里可参考官网给的[语法介绍](https://jekyllrb.com/docs/liquid/)。[varibles](https://jekyllrb.com/docs/variables/)把常用的变量都列举出来了，这里面没有的变量你也可以自己添加在相应的yaml 头文件中，以备调用。[include](https://jekyllrb.com/docs/includes/)可以让你调用_include文件夹中的内容。
 
