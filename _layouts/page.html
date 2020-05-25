@@ -207,7 +207,7 @@ layout: default
                 {% assign currenttitle = post.subtitle %}
                 {% if currenttitle != subtitle %}
                 {% unless forloop.first %}</ul>{% endunless %}
-                <h3 id="y{{post.subtitle}}">{{ currenttitle }}</h3>
+                <h5 id="y{{post.subtitle}}">{{ currenttitle }}</h5>
                 <ul>
                 {% assign subtitle = currenttitle %}
                 {% endif %}
