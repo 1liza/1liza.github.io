@@ -9,6 +9,10 @@
     padding-right: 5%;
   }
 }
+h1 {
+  font-family: mFont;
+  src: url('../fonts/Blox2.ttf');
+}
 .sidebar-container {
   color: #bfbfbf;
   font-size: 14px;
@@ -604,6 +608,7 @@ pre code {
     font-size: 20px;
   }
 }
+/* tags页面 */
 .post-preview > a {
   color: #404040;
 }
