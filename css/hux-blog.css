@@ -9,9 +9,12 @@
     padding-right: 5%;
   }
 }
-h1 {
-  font-family: mFont;
+@font-face  {
+  font-family: Blox2;
   src: url('../fonts/Blox2.ttf');
+}
+h1 {
+  font-family: Blox2;
 }
 .sidebar-container {
   color: #bfbfbf;
