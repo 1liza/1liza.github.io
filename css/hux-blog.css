@@ -13,9 +13,6 @@
   font-family: Blox2;
   src: url('../fonts/Blox2.ttf');
 }
-h1 {
-  font-family: Blox2;
-}
 .sidebar-container {
   color: #bfbfbf;
   font-size: 14px;
@@ -513,6 +510,7 @@ pre code {
   margin-bottom: 0px;
   /* 0 on mobile, modify by Hux */
 }
+/* 首页头部 */
 @media only screen and (min-width: 768px) {
   .intro-header {
     margin-bottom: 20px;
@@ -524,6 +522,7 @@ pre code {
 .intro-header .page-heading {
   padding: 85px 0 55px;
   color: white;
+  font-family: Blox2;
 }
 @media only screen and (min-width: 768px) {
   .intro-header .site-heading,
