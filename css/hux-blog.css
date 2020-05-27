@@ -9,7 +9,7 @@
     padding-right: 5%;
   }
 }
-@font-face  {
+@font-face {
   font-family: pixel-font;
   src: url('../fonts/ARCADECLASSIC.TTF') format('truetype');
 }
@@ -738,7 +738,8 @@ footer .copyright a:focus {
   font-size: 0.85em;
   line-height: 1.764705882em;
   /* vertical-align: middle;
-  vertical-align: baseline; */
+  vertical-align: baseline; 
+  这里有错误*/
   opacity: 0;
   -webkit-transition: top 0.3s ease,opacity 0.3s ease;
   -moz-transition: top 0.3s ease,opacity 0.3s ease;
