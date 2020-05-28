@@ -415,7 +415,8 @@ pre code {
 }
 .navbar-custom .nav li a {
   text-transform: uppercase;
-  font-size: 12px;
+  /* 调大 */
+  font-size: 18px; 
   line-height: 20px;
   font-weight: 800;
   letter-spacing: 1px;
