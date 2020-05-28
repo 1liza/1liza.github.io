@@ -33,7 +33,8 @@
   color: #0085a1 !important;
 }
 .sidebar-container .tags a {
-  border-color: #bfbfbf;
+  border-color: #E9C46A;
+  font-size: 14px;
 }
 .sidebar-container .tags a:hover,
 .sidebar-container .tags a:active {
