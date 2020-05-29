@@ -12,15 +12,15 @@ layout: default
         position: relative;
         background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')
     }
-
-    {% if page.header-mask %}
+    
+    /* {% if page.header-mask %}
     header.intro-header .header-mask{
         width: 100%;
         height: 100%;
         position: absolute;
         background: rgba(0,0,0, {{ page.header-mask }});
     }
-    {% endif %}
+    {% endif %} */
 </style>
 <header class="intro-header" >
     <div class="header-mask"></div>
