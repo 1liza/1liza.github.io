@@ -1,0 +1,126 @@
+I"H<h2 id="svg基础">SVG基础</h2>
+<ul>
+  <li>SVG 使用 XML 编写。SVG 文件必须使用 .svg 后缀来保存</li>
+  <li>作为XML的一种方言，SVG必须正确的绑定命名空间 （在xmlns属性中绑定<code class="language-plaintext highlighter-rouge">xmlns="http://www.w3.org/2000/svg"</code>）。xmlns 属性可以在文档中定义一个或多个可供选择的命名空间。该属性可以放置在文档内任何元素的开始标签中。该属性的值类似于 URL，它定义了一个命名空间，浏览器会将此命名空间用于该属性所在元素内的所有内容。</li>
+  <li>SVG 文件可通过以下标签嵌入 HTML 文档：<code class="language-plaintext highlighter-rouge">&lt;embed&gt;、&lt;object&gt;</code> 或者 <code class="language-plaintext highlighter-rouge">&lt;iframe&gt;</code>。</li>
+</ul>
+
+<h2 id="svg形状">SVG形状</h2>
+<ul>
+  <li>矩形 <code class="language-plaintext highlighter-rouge">&lt;rect&gt;</code></li>
+  <li>圆形 <code class="language-plaintext highlighter-rouge">&lt;circle&gt;</code></li>
+  <li>椭圆 <code class="language-plaintext highlighter-rouge">&lt;ellipse&gt;</code></li>
+  <li>线 <code class="language-plaintext highlighter-rouge">&lt;line&gt;</code></li>
+  <li>折线 <code class="language-plaintext highlighter-rouge">&lt;polyline&gt;</code></li>
+  <li>多边形 <code class="language-plaintext highlighter-rouge">&lt;polygon&gt;</code></li>
+  <li>路径 <code class="language-plaintext highlighter-rouge">&lt;path&gt;</code></li>
+</ul>
+
+<h2 id="常用方法">常用方法</h2>
+<ul>
+  <li>fill 填充</li>
+  <li>style</li>
+  <li>
+    <h2 id="strokestroke-width-描边">stroke;stroke-width 描边</h2>
+  </li>
+</ul>
+
+<h2 id="canvas基础">canvas基础</h2>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">&lt;canvas&gt;</code>标签只有两个属性—— width和height</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;canvas&gt;</code>元素本身并没有绘制能力（它仅仅是图形的容器） - 您必须使用脚本来完成实际的绘图任务。</li>
+  <li>getContext() 方法可返回一个对象，该对象提供了用于在画布上绘图的方法和属性。</li>
+</ul>
+
+<h2 id="常用方法-1">常用方法</h2>
+<ul>
+  <li>颜色、样式和阴影:fillStyle strokeStyle shadowColor</li>
+  <li>线条样式:lineCap lineWidth</li>
+  <li>矩形:rect() 圆弧:<code class="language-plaintext highlighter-rouge">arc(x,y,r,sAngle,eAngle,counterclockwise)</code></li>
+  <li>路径:beginPath()方法开始一条路径，或重置当前的路径。 moveTo()</li>
+  <li>变换:scale() rotate()</li>
+  <li>文本:font textBaseline</li>
+  <li>图像绘制:drawImage()	向画布上绘制图像、画布或视频</li>
+  <li>动画: (1)清空 canvas:<code class="language-plaintext highlighter-rouge">clearRect</code>;(2)保存 canvas 状态:<code class="language-plaintext highlighter-rouge">ctx.save()</code>;(3)绘制动画图形（animated shapes）;(4)恢复 canvas 状态:<code class="language-plaintext highlighter-rouge">ctx.restore()</code>;</li>
+  <li>保存:save():保存当前的绘图状态。restore():恢复之前保存的绘图状态。</li>
+</ul>
+
+<hr />
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;?xml version="1.0" standalone="no"?&gt;
+&lt;!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"&gt;
+
+&lt;svg width="100%" height="100%" version="1.1"
+xmlns="http://www.w3.org/2000/svg"&gt;
+</code></pre></div></div>
+<p>上面的代码可以直接复制到.svg文件中，每次都会用到。</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>XML declaration allowed only at the start of the document
+</code></pre></div></div>
+<p>提示XML只能在头文件，看了半天，代码第一行最前面多了一个空格。</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+----
+var canvas = document.getElementById('canvas');
+if (canvas.getContext) {
+    var ctx = canvas.getContext('2d');
+    ···
+}
+</code></pre></div></div>
+<p>上面是canvas的使用方法</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function draw() {
+    var canvas = document.getElementById("canvas")
+    if (canvas.getContext) {
+        var ctx = canvas.getContext("2d");
+
+        console.log("begin drawing")
+        ctx.beginPath();//开始画第一个路径可以不加，但最好加上
+        ctx.arc(100,100, 80,0,2*Math.PI,true);
+        ctx.stroke();//一定要加这一句，否则是没有图像显示出来的
+        //前面的程序只是路径，一定要记得描边
+    }
+}
+</code></pre></div></div>
+
+<p>如果连线和画点在同一个循环里面是无法给点填充颜色的</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ctx.beginPath();
+for (let i=0;i&lt;data.length;i++) {
+    let x = barWidth * (i+1) + startX;
+    let y = startY - Math.round(data[i]/max_d*axisY);
+    //连线
+    if (i===0) {
+        ctx.moveTo(x, y);                
+    } else {
+        ctx.lineTo(x, y);            
+    }
+    console.log("画点")
+    ctx.arc(x, y, 5, 0, 2*Math.PI);
+    ctx.stroke();
+    ctx.fillStyle = "orange";
+    ctx.fill();
+} 
+</code></pre></div></div>
+<p>上面程序结果会是下图所示，这是因为在整个for循环过程中，笔触一直没有“抬起来”过，笔触移动的位置都将填充为橙色。
+<img src="img/fill.png" alt="img" /></p>
+
+<p>那既然是笔触没有“抬起来”过的原因，那直接在循环最后面加一个<code class="language-plaintext highlighter-rouge">ctx.beginPath();</code>不就行了？？？</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ctx.beginPath();
+for (let i=0;i&lt;data.length;i++) {
+    let x = barWidth * (i+1) + startX;
+    let y = startY - Math.round(data[i]/max_d*axisY);
+    //连线
+    if (i===0) {
+        ctx.moveTo(x, y);                
+    } else {
+        ctx.lineTo(x, y);            
+    }
+    console.log("画点")
+    ctx.arc(x, y, 5, 0, 2*Math.PI);
+    ctx.stroke();
+    ctx.fillStyle = "orange";
+    ctx.fill();
+    ctx.beginPath();
+} 
+</code></pre></div></div>
+<p>NO NO NO,这样的话，结果会像下面图示一样。为什么呢？因为笔触“抬起来”后，到下一个循环准备在两点之间连线的时候就会发现，因为笔触“抬起来”，上一个点的位置“不见了”，无法’'’ctx.lineTo(x, y); ‘’’
+<img src="img/beginPath.png" alt="img" /></p>
+:ET

@@ -1,0 +1,20 @@
+I"�<h2 id="选择符api">选择符API</h2>
+<ul>
+  <li>jQuery的核心就是通过CSS选择符查询DOM文档取得元素的引用，从而抛开了getElementById()和getElementsByTagName()</li>
+  <li>querySelector() //返回匹配的第一个元素，如果没有返回null</li>
+  <li>querySelectorAll() //返回Nodelist实例</li>
+  <li>matchesSelector() //返回true false</li>
+</ul>
+
+<h2 id="元素遍历">元素遍历</h2>
+<ul>
+  <li>childElementCount</li>
+  <li>firstElementChild</li>
+  <li>lastElementChild</li>
+  <li>previousElement</li>
+  <li>nextElementSibling</li>
+</ul>
+
+<h2 id="html5">HTML5</h2>
+<p>HTML5 规范围绕如何使用新增标记定义了大量的JS API</p>
+:ET

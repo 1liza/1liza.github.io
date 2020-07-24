@@ -1,0 +1,41 @@
+I"X<h2 id="浏览器报告的错误">浏览器报告的错误</h2>
+
+<h2 id="处理错误">处理错误</h2>
+<p>try catch finally</p>
+<ul>
+  <li>错误类型
+Error 
+EvalError eval函数异常
+RangeError 
+ReferenceError 
+SyntaxError 
+TypeError 
+URIError URI格式问题
+类型转换错误
+数据类型错误
+通信错误</li>
+  <li>把错误记录到服务器
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function logError(sev, msg) {
+  var img = new Image();
+  img.src = "log.php?sev=" + encodeURIComponent(sev) + "&amp;msg=" + encodeURIComponent(msg);
+}
+</code></pre></div>    </div>
+    <p>使用Image对象来发送请求
+1.所有浏览器都支持Image对象
+2.可以避免跨域限制。通常都是一台服务器要负责处理多台服务器的错误，这个情况下使用XMLHttpRequest是不行的
+3.在记录过程中出问题的概率较低。</p>
+    <h2 id="调试技术">调试技术</h2>
+    <p>error(message) 将错误消息记录到控制台
+info(message) 将信息性消息记录到控制台
+log(message) 一般消息
+warn(message) 警告消息</p>
+    <h2 id="常见的ie错误">常见的IE错误</h2>
+  </li>
+  <li>操作中止</li>
+  <li>无效字符</li>
+  <li>未找到成员</li>
+  <li>未知运行时错误</li>
+  <li>语法错误</li>
+  <li>系统无法找到指定资源</li>
+</ul>
+:ET

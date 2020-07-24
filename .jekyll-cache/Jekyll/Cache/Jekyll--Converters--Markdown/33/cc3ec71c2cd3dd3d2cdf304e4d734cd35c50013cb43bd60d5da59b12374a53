@@ -1,0 +1,113 @@
+I"d<h2 id="事件流">事件流</h2>
+<ul>
+  <li>事件冒泡</li>
+  <li>事件捕获
+    <h2 id="事件处理程序">事件处理程序</h2>
+  </li>
+  <li>
+    <p>DOM0级事件处理
+分为2个：
+一是在标签内写onclick事件
+二是在JS写onlicke=function（）{}函数</p>
+  </li>
+  <li>DOM2级事件处理
+只有一个：监听方法，原生有两个方法用来添加和移除事件处理程序：addEventListener()和removeEventListener()。
+它们都有三个参数：
+第一个参数是事件名（如click）；
+第二个参数是事件处理程序函数；
+第三个参数如果是true则表示在捕获阶段调用，为false表示在冒泡阶段调用。
+只有2级DOM包含3个事件：事件捕获阶段、处于目标阶段和事件冒泡阶段</li>
+</ul>
+
+<h2 id="对象事件">对象事件</h2>
+<p>在触发DOM上某个事件时，会产生一个事件对象event，这个对象中包含着所有与事件有关的信息。包括倒是时间的元素，事件的类型以及其他与特定事件相关的信息。</p>
+<ul>
+  <li>属性、方法
+bubble 
+cancelable 
+currentTarget 
+defaulePrevented 
+detail 
+eventPhase
+preventDefault
+target
+trusted 
+type
+view</li>
+</ul>
+
+<h2 id="事件类型">事件类型</h2>
+<ul>
+  <li>
+    <p>UI事件
+load 页面完全加载后触发
+unload 文档被完全卸载后触发
+abort 
+error
+select
+resize
+scroll</p>
+  </li>
+  <li>
+    <p>焦点事件
+blur 元素获得焦点时触发
+focus
+focusout 失去焦点的元素</p>
+  </li>
+  <li>
+    <p>鼠标事件与滚轮事件
+click
+dbclick 双击
+mousedown
+mouseenter
+mouseleave
+mousemove
+mouseup 释放鼠标时触发</p>
+  </li>
+  <li>
+    <p>文本事件与键盘事件
+keydown 
+keypress</p>
+  </li>
+  <li>
+    <p>合成事件
+处理IME（输入法编辑器）事件</p>
+  </li>
+  <li>
+    <p>变动事件
+DOMSubtreeModified
+DOMNOdeRemoved
+DOMNodeInsertedIntoDocument</p>
+  </li>
+  <li>
+    <p>HTML5事件
+contextmenu 上下文菜单
+beforeload 页面卸载前触发</p>
+  </li>
+  <li>
+    <p>设备事件
+orientationchange 纵向查看模式
+MozOritation 平面方向变化</p>
+  </li>
+  <li>
+    <p>触摸事件与手势事件
+touchstart
+touchmove
+touchend
+gesturestart
+gesturechange</p>
+  </li>
+  <li>内存和性能
+<strong>事件委托</strong>处理了“事件处理程序过多”的问题。
+事件委托利用了<strong>事件冒泡</strong>，只指定一个事件处理程序，就可以管理某一类型的所有事件</li>
+  <li>可以考虑为document对象添加一个使劲按处理程序，用于处理页面上发生的某种特定类型的事件。住哟啊有以下三个优点：
+    <ol>
+      <li>document对象很快就可以访问，而且可以在页面声明周期的任何时点上为它添加事件处理程序（无需等待DOMContentLoad或load事件）。也就是，只要可点击的元素呈现在页面上，就可以立即具备适当的功能。
+2.在页面中设置事件处理程序所需的事件更少。只添加一个事件处理程序所需的DOM引用更少，所花的时间也更少
+3.整个页面占据的内存空间更少，能够提示整体性能。</li>
+    </ol>
+  </li>
+  <li>模拟事件
+creatEvent</li>
+</ul>
+:ET

@@ -1,0 +1,136 @@
+I"l<p><a href="http://ife.baidu.com/course/detail/id/52?t=1588665023643#learn">第二十八天到第三十天 给爱的人发个邮件吧</a></p>
+
+<p><a href="">测试网页</a></p>
+
+<h2 id="keydown-keyup-keyprss-oninput-区别">keydown keyup keyprss oninput 区别</h2>
+<ul>
+  <li>keydown刚刚按下的字符还没有进入input里面；</li>
+  <li>keyup如果同时按住并松开几个字符，则会在input中一起出现；按住不放则不会触发keyup；</li>
+  <li>keypress可以解决按住不放和同时按的问题，同时松开的字符会依次出现，按住不放的字符会逐渐增多，但是刚刚按下的字符还没进入input</li>
+  <li>input不会出现任何问题</li>
+</ul>
+
+<p><strong>需要观察到用户每次键盘输入的变化，必须要用keydown、keyup与input，onchange与blur无效。</strong></p>
+
+<p><strong>keyup与input都能及时获取到用户输入的全值，而keydown不会将当前的键值计入到输入框的值中</strong></p>
+
+<p><a href="https://blog.csdn.net/yiifaa/article/details/52372022">事件发生顺序</a></p>
+
+<p><a href="">测试网页</a></p>
+
+<p>依次输入a b c然后backspace删除，可以看到效果图如下：
+<img src="./test_keydown.png" alt="result" /></p>
+<blockquote>
+  <ol>
+    <li>keydown事件发生时，输入值并没有发生变化，所以keydown可用于阻止某些输入字符的显示。</li>
+    <li>input事件发生时，无法获取到keyCode值，并且紧随在keydown事件之后。</li>
+    <li>keyup事件最后发生，一次键盘敲入事件彻底完成。</li>
+    <li>change事件只会发生在输入完成后，也就是输入框失去焦点之前。
+      <ul>
+        <li>没有进行任何输入时，不会触发change,但一定会触发blur事件。在判断表单的修改状态时，这种差异会非常有用，通过change事件能轻易地找到哪些字段发生了变更以及其值的变更轨迹。</li>
+        <li>输入后值并没有发生变更.这种情况是指，在没有失焦的情况下，在输入框内进行返回的删除与输入操作，但最终的值与原值一样，这种情况下，keydown、input、keyup、blur都会触发，但change依旧不会触发。</li>
+      </ul>
+    </li>
+  </ol>
+</blockquote>
+
+<h2 id="获取子元素方法">获取子元素方法</h2>
+<p><a href="">测试网页</a></p>
+<h3 id="1children">1.children</h3>
+<p>childNodes 属性返回所有的节点，包括文本节点、注释节点；
+children 属性只返回元素节点；</p>
+<h3 id="2first-child系列">2.first-child系列</h3>
+<p>(1)、first-child
+first-child表示选择列表中的第一个标签：
+<code class="language-plaintext highlighter-rouge">li:first-child{background:#090}//li 列表中的 第一个li模块的背景颜色。</code></p>
+
+<p>(2)、last-child
+last-child表示选择列表中的最后一个标签：</p>
+<pre><code class="language-li:last-child{background:#090}```">
+(3)、nth-child(3)
+表示选择列表中的第3个标签：
+```li:nth-child(3){background:#090}```
+
+(4)、nth-child(2n) 
+这个表示选择列表中的偶数标签，即选择 第2、第4、第6…… 标签。
+
+(5)、nth-child(2n-1)
+这个表示选择列表中的奇数标签，即选择 第1、第3、第5、第7……标签。
+
+(6)、nth-child(n+3)
+这个表示选择列表中的标签从第3个开始到最后。
+
+(7)、nth-child(-n+3)
+这个表示选择列表中的标签从0到3，即小于3的标签。
+
+(8)、nth-last-child(3)
+这个表示选择列表中的倒数第3个标签。
+
+https://www.runoob.com/jsref/prop-element-children.html
+https://www.runoob.com/jquery/traversing-children.html
+https://blog.csdn.net/weixin_30849591/article/details/99338260
+https://www.cnblogs.com/web-fusheng/p/6816440.html
+## 判断字符串A中是否包含字符串B ##
+[测试网页]()
+- 方法一: indexOf()
+</code></pre>
+<p>var str = “I love HTML”;
+console.log(str.indexOf(“HTML”) != -1); //true</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>indexOf() 方法可返回某个指定的字符串值在字符串中首次出现的位置。如果要检索的字符串值没有出现，则该方法返回 -1。
+
+- 方法二: search()
+</code></pre></div></div>
+<p>var str = “I love HTML”;
+console.log(str.search(“HTML”) != -1); //true</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>search() 方法用于检索字符串中指定的子字符串，或检索与正则表达式相匹配的子字符串。如果没有找到任何匹配的子串，则返回 -1。
+
+-方法三:match()
+</code></pre></div></div>
+<p>var str = “I love HTML”;
+console.log(str.match(/HTML/)); //HTML 如果不含“HTML”则返回null
+console.log(str.match(“HTML”));//HTML
+console.log(str.matchh(/[A-z]/g)); //I,L,O,V,E,H,T,M,L 如果有g则多次匹配
+console.log(str.match(“HTML”)).index;//7 注意如果字符串中不含有“HTML”则出错</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>match() 方法可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。
+- 方法四:test()
+</code></pre></div></div>
+<p>var str = “I love HTML”;
+console.log((/HTML/).test(str));//true</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>test() 方法用于检索字符串中指定的值。返回 true 或 false。
+- 方法五:exec()
+</code></pre></div></div>
+<p>var str = “I love HTML”;
+console.log((/HTML/).exec(str));//返回的结果与match相同，都是数组
+```
+exec() 方法用于检索字符串中的正则表达式的匹配。返回一个数组，其中存放匹配的结果。如果未找到匹配，则返回值为 null。</p>
+
+<p><a href="https://www.w3school.com.cn/jsref/jsref_obj_regexp.asp">RegExp 正则匹配常用方法</a></p>
+
+<h2 id="截取字符串方法">截取字符串方法</h2>
+<p><a href="">测试网页</a></p>
+<ul>
+  <li>1.substring 方法
+<code class="language-plaintext highlighter-rouge">stringObject.substring(start,stop)</code>
+substring 方法用于提取字符串中介于两个指定下标之间的字符。其内容是从 start 处到 stop-1 处的所有字符，其长度为 stop 减 start。</li>
+  <li>2.substr 方法
+<code class="language-plaintext highlighter-rouge">stringObject.substr(start [, length ])</code>
+substr 方法用于返回一个从指定位置开始的指定长度的子字符串。</li>
+  <li>3.slice() 方法
+与substring类似</li>
+</ul>
+
+<h2 id="innerhtml-innertext和value区别">innerHTML innerText和value区别</h2>
+
+<p>1.innerText是id为object的闭合标签内的文本,输入输出的是转义文本(字符串);
+  (label控件用innerText有效)</p>
+
+<p>2.innerHtml是”&lt;div&gt;“标签内的文本,输入输出到该DOM内部纯HTML代码(流);
+  (获得td、div等html元素时候,它们是没有value或是text属性,只能用innerHtml)</p>
+
+<p>3.value是表单元素特有的属性,输入输出的是转义文本(字符串);
+  (Button、CheckBox、Radio)随表单一起发送的值;
+  (Reset、Submit)标签;
+  (Text、Hidden)默认值;
+  (File、Password)
+  (注: Text控件用value有效)</p>
+:ET

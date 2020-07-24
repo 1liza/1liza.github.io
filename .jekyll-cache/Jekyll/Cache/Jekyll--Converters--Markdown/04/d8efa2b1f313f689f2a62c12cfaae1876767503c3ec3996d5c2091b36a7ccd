@@ -1,0 +1,16 @@
+I"�<h2 id="javascript-动态修改css样式方法汇总">javascript 动态修改css样式方法汇总</h2>
+
+<p>1、使用obj.className来修改样式表的类名。</p>
+
+<p>2、使用obj.style.cssTest来修改嵌入式的css。</p>
+
+<p>3、使用obj.className来修改样式表的类名。</p>
+
+<p>4、使用更改外联的css文件，从而改变元素的css
+https://www.cnblogs.com/qq9694526/p/5653728.html
+https://www.cnblogs.com/aademeng/articles/6279060.html
+https://www.cnblogs.com/lazychen/p/5664788.html
+https://www.cnblogs.com/liugang-vip/p/5616484.html
+https://blog.csdn.net/supercoooooder/article/details/52190100
+https://segmentfault.com/a/1190000002613617</p>
+:ET

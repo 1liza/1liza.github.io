@@ -1,0 +1,36 @@
+I"�<h2 id="windows-对象">Windows 对象</h2>
+<p>BOM核心对象是window</p>
+<ul>
+  <li>窗口位置screenLeft screenTo</li>
+  <li>窗口大小innerWidth innerHeight outerwidth outerHeight</li>
+  <li>打开窗口 window.open() wroxWin.close()</li>
+  <li>弹出窗口屏蔽 如果返回null是浏览器内置程序，如果抛出错误可能是浏览器扩展导致</li>
+  <li>间歇调用、超时调用 setTimeout() setInterval()</li>
+  <li>系统对话框 alert() confirm() prompt() find() print()</li>
+</ul>
+
+<h2 id="location-对象">location 对象</h2>
+<ul>
+  <li>window.location document.location引用的是同一个对象</li>
+  <li>作用：保存当前文档的信息；将URL解析为独立的片段</li>
+  <li>hash</li>
+  <li>host 服务器名和端口名</li>
+  <li>hostname</li>
+  <li>href</li>
+  <li>pathname URL中的目录或文件名</li>
+  <li>protocol 页面使用的协议</li>
+  <li>search</li>
+</ul>
+
+<h2 id="navigator-对象">navigator 对象</h2>
+<ul>
+  <li>识别客户端浏览器</li>
+  <li>appCodeName 浏览器名称</li>
+</ul>
+
+<h2 id="history-对象">history 对象</h2>
+<ul>
+  <li>保存上网的历史记录</li>
+  <li>history.go() 在不知道实际URL的情况下前进和后退</li>
+</ul>
+:ET

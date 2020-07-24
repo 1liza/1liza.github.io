@@ -1,0 +1,59 @@
+I"f<h2 id="in操作符">in操作符</h2>
+<ul>
+  <li>in操作符会在通过对象能够访问给定属性时返回true，无论该属性存在于实例还是原型中</li>
+  <li>hasOwnProperty只在属性存在于实例中才返回true</li>
+  <li>for ··· in返回的是所有能通过对象访问的，可枚举的属性。包括存在于原型中的属性
+    <h2 id="继承">继承</h2>
+  </li>
+  <li>利用原型让一个引用类型继承另一个引用类型的属性和方法
+    <h2 id="函数声明与函数表达式">函数声明与函数表达式</h2>
+  </li>
+  <li>函数声明
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function 函数名(参数){
+  要执行的代码
+}
+</code></pre></div>    </div>
+  </li>
+  <li>函数表达式
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var/let/const 变量=function(参数){
+  要执行的代码
+}
+</code></pre></div>    </div>
+    <p>上面这两段示例代码的意思是一样的：“创建一个函数，并把它存进变量 sayHi”。
+```
+function sayHi() {
+alert( “Hello” );
+}</p>
+  </li>
+</ul>
+
+<p>alert( sayHi ); // 显示函数代码,因为 sayHi 后没有括号。如果有括号，会显示函数调用结果</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>在某种意义上说一个函数是一个特殊值，我们可以像 sayHi() 这样调用它。
+但它依然是一个值，所以我们可以像使用其他类型的值一样使用它。
+</code></pre></div></div>
+<p>function sayHi() {   // (1) 创建
+  alert( “Hello” );
+}</p>
+
+<p>let func = sayHi;    // (2) 复制</p>
+
+<p>func(); // Hello     // (3) 运行复制的值（正常运行）！
+sayHi(); // Hello    //     这里也能运行</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- **函数表达式是在代码执行到达时被创建，并且仅从那一刻起可用。**
+- **在函数声明被定义之前，它就可以被调用**。当 JavaScript 准备 运行脚本时，首先会在脚本中寻找全局函数声明，并创建这些函数。在处理完所有函数声明后，代码才被执行。
+</code></pre></div></div>
+<p>sayHi(“John”); // Hello, John</p>
+
+<p>function sayHi(name) {
+  alert( ‘Hello’+ name );
+}</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>上面的代码会正常工作
+</code></pre></div></div>
+<p>sayHi(“John”); // error!</p>
+
+<p>let sayHi = function(name) {  // (<em>)
+  alert( ‘Hello’+ name );
+};
+```
+函数表达式在代码执行到它时才会被创建,也就是在 (</em>) 行。但是代码中没有全局函数声明，所以按照从上到下顺序执行，执行到第一句就会报错，因为函数未被创建</p>
+:ET

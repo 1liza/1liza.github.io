@@ -1,0 +1,25 @@
+I"8<h2 id="表单基础知识">表单基础知识</h2>
+<ul>
+  <li>表单对应HTMLFormElement类型</li>
+  <li>提交表单：使用<code class="language-plaintext highlighter-rouge">&lt;input&gt;</code>和<code class="language-plaintext highlighter-rouge">&lt;button&gt;</code>都可以定义提交按钮，只要将其type的值设定为”submit”就可以。</li>
+  <li>重置表单：同提交，ype的值设定为”reset”
+    <h2 id="文本框脚本">文本框脚本</h2>
+  </li>
+  <li>选择文本：select setSelectRange</li>
+  <li>过滤输入</li>
+  <li>自动切换焦点</li>
+  <li>HTML５结束验证API：
+required　必填字段
+tpye 提供一些默认的验证功能
+    <h2 id="选择框脚本">选择框脚本</h2>
+    <p>selectedIndex
+selectBox.appendChild(newOption, undefined)
+selectbox.remove(index)</p>
+    <h2 id="表单序列化">表单序列化</h2>
+    <p>浏览器将数据发送给服务器方式：
+1.对表单字段的名称和值进行URL编码</p>
+    <h2 id="富文本编辑">富文本编辑</h2>
+    <p>document.execCommand()</p>
+  </li>
+</ul>
+:ET

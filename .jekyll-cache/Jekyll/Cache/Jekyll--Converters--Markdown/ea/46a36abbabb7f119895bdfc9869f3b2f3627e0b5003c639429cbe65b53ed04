@@ -1,0 +1,22 @@
+I"�<h2 id="ecmascript-javascript的区别">ECMAScript JavaScript的区别</h2>
+<ul>
+  <li>Js是专为网页交互而设计的脚本语言</li>
+  <li>完整的JavaScript应该包含：核心（ECMAScript）、文档对象模型（DOM）、浏览器对象模型（BOM）</li>
+  <li>ECMAScript 提供了脚本语言需要遵守的规则、细节和规范。</li>
+  <li>通过阅读ECMAScript 标准，你可以学会怎样实现一个脚本语言；而通过阅读JavaScript 文档，你可以学会怎样使用脚本语言编程。</li>
+  <li>JavaScript 引擎：理解并执行 JavaScript 代码的解释器。比如 Chrome 有 V8，Firefox 有 SpiderMonkey，Edge 有 Chakra。引擎不同导致浏览器性能差异和支持差异（ECMAScript）</li>
+</ul>
+
+<h2 id="文档类型对象-dom">文档类型对象 DOM</h2>
+<ul>
+  <li>HTML的应用程序编程接口</li>
+  <li>把整个页面映射为多层节点结构</li>
+  <li>DOM 并不是一个编程语言，但如果没有DOM， JavaScript 语言也不会有任何HTML，XML页面以及涉及到的元素的概念或模型。如<code class="language-plaintext highlighter-rouge">getElementsByTagName("P")</code>方法必须要返回所有&lt;P&gt; 元素的列表</li>
+  <li>DOM标准：DOM核心；DOM HTML；SVG；MathML；SMIL等</li>
+</ul>
+
+<h2 id="浏览器对象模型-bom">浏览器对象模型 BOM</h2>
+<ul>
+  <li>控制浏览器显示的页面以外的部分，如：弹出新窗口；移动，缩放和关闭浏览器窗口；提供浏览器详细信息等</li>
+</ul>
+:ET

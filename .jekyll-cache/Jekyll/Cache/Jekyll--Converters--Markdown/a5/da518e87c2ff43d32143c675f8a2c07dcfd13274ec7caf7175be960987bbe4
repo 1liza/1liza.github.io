@@ -1,0 +1,34 @@
+I"�<p><strong>引用类型的值（对象）是引用类型的一个实例</strong></p>
+<h2 id="object类型">Object类型</h2>
+<ul>
+  <li>通过对象字面量定义对象时，不会调用构造函数
+    <h2 id="array类型">Array类型</h2>
+  </li>
+  <li>数组每一项可以保存任何类型的数据</li>
+  <li>字面量定义数组时，不会调用构造函数</li>
+  <li>不是只读</li>
+  <li>toLocaleString() toString() valueOf()</li>
+  <li>reverse() sort()</li>
+  <li>concat() slice() splice()</li>
+  <li>indexOf() lastIndexOf()</li>
+  <li>every() filter() forEach() map() some()</li>
+  <li>reduce() reduceRight()
+    <h2 id="regexp类型">RegExp类型</h2>
+  </li>
+  <li>g:全局模式</li>
+  <li>a:不区分大小写</li>
+  <li>m:多行模式</li>
+  <li>exec()</li>
+  <li>test()
+    <h2 id="function类型">function类型</h2>
+  </li>
+  <li>函数内部对象：argument和this</li>
+  <li>this引用的是韩式执行的环境对象</li>
+  <li>函数属性：length(韩式希望接受的命名参数的个数)；prototype保存所有实例方法
+    <h2 id="基本包装类型">基本包装类型</h2>
+  </li>
+  <li>Boolean</li>
+  <li>Number</li>
+  <li>String:split,localeCompare,fromCharCode;</li>
+</ul>
+:ET

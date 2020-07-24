@@ -1,0 +1,23 @@
+I"�<h2 id="基本用法">基本用法</h2>
+<ul>
+  <li>首先要用getContext()检测canvas方法是否存在
+    <h2 id="2d上下文">2D上下文</h2>
+    <h2 id="webgl">WebGL</h2>
+    <p>WebGL是针对Canvas的3D上下文
+—-</p>
+    <h2 id="类型化数组">类型化数组</h2>
+  </li>
+  <li>核心：ArrayBuffer类型：表示内存中指定的字节数</li>
+  <li>使用ArrayBuffer来创建数组缓冲器视图</li>
+  <li>类型化视图（类型化数组）：元素必须是某种特定的数据类型</li>
+  <li>使用WebGL上下文是，要先检测返回值，即浏览器是否支持</li>
+  <li>准备绘图：使用clearColor()指定颜色，用实色清除<code class="language-plaintext highlighter-rouge">&lt;canvas&gt;</code></li>
+  <li>视图坐标的原点在<code class="language-plaintext highlighter-rouge">&lt;canvas&gt;</code>的左下角</li>
+  <li>WebGL一般不会抛出错误，需要用getError()</li>
+  <li>着色器：<strong>顶点着色器</strong>：将3D顶点转换为需要渲染的2D点；<strong>片段着色器</strong>：准确计算要绘制的每个像素的颜色。</li>
+  <li>GLSL是一种类C语言，专用于编写OpenGL着色器。</li>
+  <li>WebGL只能绘制：点，线，三角</li>
+  <li>读取像素</li>
+</ul>
+
+:ET

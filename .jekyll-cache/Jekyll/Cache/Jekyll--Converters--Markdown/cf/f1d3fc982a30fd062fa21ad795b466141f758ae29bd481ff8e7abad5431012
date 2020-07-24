@@ -1,0 +1,335 @@
+I"�6<p>首先非常感谢<a href="https://github.com/qiubaiying/qiubaiying.github.io">baiying</a>的博客搭建教程,我参考了他的教程搭建了基于Github和Jekyll的个人博客。但是个人博客还是有很多需求要改，我参考了<a href="https://jekyllrb.com/">jekyll</a>官网教程，做了一些修改，搭建了<a href="https://1liza.github.io/">我的博客</a>。这里想跟大家补充一下你可能想要修改的基础内容。</p>
+
+<hr />
+
+<p><strong>我的博客内容主要分为《JavaScript高级教程程序设计》笔记总结、百度前端学院笔记总结 和 网页搭建 三部分。</strong></p>
+
+<p><strong>我的工作主要是解决了不同板块内容侧边栏分类、文档排序</strong></p>
+
+<p><strong>不想看原理的同学可以直接看“文档归类”和“文档排序”</strong></p>
+
+<hr />
+
+<h2 id="文档归类">文档归类</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!-- 导航 --&gt;
+&lt;hr&gt;
+&lt;h5&gt;主题导航&lt;/h5&gt;
+
+ 
+
+
+&lt;h3 id="y网页搭建"&gt;网页搭建&lt;/h3&gt;
+&lt;ul&gt;
+
+
+&lt;li&gt;&lt;a href="/2020/05/24/%E7%BD%91%E9%A1%B5%E5%9B%BE%E6%A0%87/"&gt;网页图标&lt;/a&gt;&lt;/li&gt;
+
+
+ 
+
+&lt;li&gt;&lt;a href="/2020/05/23/github%E6%90%AD%E5%BB%BA/"&gt;个人博客搭建&lt;/a&gt;&lt;/li&gt;
+
+
+ 
+
+&lt;/ul&gt;
+&lt;h3 id="y技巧总结"&gt;技巧总结&lt;/h3&gt;
+&lt;ul&gt;
+
+
+&lt;li&gt;&lt;a href="/2020/05/21/js%E4%B8%AD%E5%B8%B8%E9%87%8F%E5%92%8C%E5%8F%98%E9%87%8F/"&gt;js中常量和变量&lt;/a&gt;&lt;/li&gt;
+
+
+ 
+
+&lt;li&gt;&lt;a href="/2020/05/21/%E5%BE%AA%E7%8E%AF%E6%B7%BB%E5%8A%A0%E4%BA%8B%E4%BB%B6/"&gt;循环添加事件&lt;/a&gt;&lt;/li&gt;
+
+
+ 
+
+&lt;/ul&gt;
+&lt;h3 id="y去哪儿网"&gt;去哪儿网&lt;/h3&gt;
+&lt;ul&gt;
+
+
+&lt;li&gt;&lt;a href="/2020/05/14/%E5%8E%BB%E5%93%AA%E5%84%BF-ch2-%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/"&gt;第二章 课程介绍&lt;/a&gt;&lt;/li&gt;
+
+
+ 
+
+&lt;/ul&gt;
+&lt;h3 id="yJs高级程序设计"&gt;Js高级程序设计&lt;/h3&gt;
+&lt;ul&gt;
+
+
+&lt;li&gt;&lt;a href="/2020/05/14/%E7%AC%AC%E4%BA%8C%E5%8D%81%E7%AB%A0-JSON/"&gt;第二十章 JSON&lt;/a&gt;&lt;/li&gt;
+
+
+ 
+
+&lt;li&gt;&lt;a href="/2020/05/14/%E7%AC%AC%E5%8D%81%E5%85%AB%E7%AB%A0-Js%E4%B8%8EXML/"&gt;第十八章 js与XML&lt;/a&gt;&lt;/li&gt;
+
+
+ 
+
+&lt;li&gt;&lt;a href="/2020/05/14/%E7%AC%AC%E5%8D%81%E4%B8%83%E7%AB%A0-%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%E4%B8%8E%E8%B0%83%E8%AF%95/"&gt;第十七章 错误处理与调试&lt;/a&gt;&lt;/li&gt;
+
+
+ 
+
+&lt;li&gt;&lt;a href="/2020/05/14/%E7%AC%AC%E5%8D%81%E5%85%AD%E7%AB%A0-HTML%EF%BC%95%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/"&gt;第十六章 HTML5脚本编程&lt;/a&gt;&lt;/li&gt;
+
+
+ 
+
+&lt;li&gt;&lt;a href="/2020/05/14/%E7%AC%AC%E5%8D%81%E4%BA%94%E7%AB%A0-%E4%BD%BF%E7%94%A8Canvas%E7%BB%98%E5%9B%BE/"&gt;第十五章 使用Canvas绘图&lt;/a&gt;&lt;/li&gt;
+
+
+ 
+
+&lt;li&gt;&lt;a href="/2020/05/13/%E7%AC%AC%E5%8D%81%E5%9B%9B%E7%AB%A0-%E8%A1%A8%E5%8D%95%E8%84%9A%E6%9C%AC/"&gt;第十四章 表单脚本&lt;/a&gt;&lt;/li&gt;
+
+
+ 
+
+&lt;li&gt;&lt;a href="/2020/05/13/%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0-%E4%BA%8B%E4%BB%B6/"&gt;第十三章 事件&lt;/a&gt;&lt;/li&gt;
+
+
+ 
+
+&lt;li&gt;&lt;a href="/2020/05/13/%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0-DOM2%E5%92%8CDOM3/"&gt;第十二章 DOM2和DOM3&lt;/a&gt;&lt;/li&gt;
+
+
+ 
+
+&lt;li&gt;&lt;a href="/2020/05/13/%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0-DOM%E6%89%A9%E5%B1%95/"&gt;第十一章 DOM扩展&lt;/a&gt;&lt;/li&gt;
+
+
+ 
+
+&lt;li&gt;&lt;a href="/2020/05/13/%E7%AC%AC%E5%8D%81%E7%AB%A0-DOM/"&gt;第十章 DOM&lt;/a&gt;&lt;/li&gt;
+
+
+ 
+
+&lt;li&gt;&lt;a href="/2020/05/13/%E7%AC%AC%E4%B9%9D%E7%AB%A0-%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%A3%80%E6%B5%8B/"&gt;第九章 客户端检测&lt;/a&gt;&lt;/li&gt;
+
+
+ 
+
+&lt;li&gt;&lt;a href="/2020/05/12/%E7%AC%AC%E5%85%AB%E7%AB%A0-BOM/"&gt;第七章 BOM&lt;/a&gt;&lt;/li&gt;
+
+
+ 
+
+&lt;li&gt;&lt;a href="/2020/05/09/%E7%AC%AC%E4%B8%83%E7%AB%A0-%E5%87%BD%E6%95%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F/"&gt;第七章 函数表达式&lt;/a&gt;&lt;/li&gt;
+
+
+ 
+
+&lt;li&gt;&lt;a href="/2020/05/07/%E7%AC%AC%E5%85%AD%E7%AB%A0-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"&gt;第六章 面向对象的程序设计&lt;/a&gt;&lt;/li&gt;
+
+
+ 
+
+&lt;li&gt;&lt;a href="/2020/05/07/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/"&gt;第五章 引用类型&lt;/a&gt;&lt;/li&gt;
+
+
+ 
+
+&lt;li&gt;&lt;a href="/2020/05/07/%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E5%8F%98%E9%87%8F%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%92%8C%E5%86%85%E5%AD%98%E9%97%AE%E9%A2%98/"&gt;第四章 变量作用域和内存&lt;/a&gt;&lt;/li&gt;
+
+
+ 
+
+&lt;li&gt;&lt;a href="/2020/05/07/%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/"&gt;第三章 基本概念&lt;/a&gt;&lt;/li&gt;
+
+
+ 
+
+&lt;li&gt;&lt;a href="/2020/05/07/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%9C%A8HTML%E4%B8%AD%E4%BD%BF%E7%94%A8Js/"&gt;第二章 在HTML中使用js&lt;/a&gt;&lt;/li&gt;
+
+
+ 
+
+&lt;li&gt;&lt;a href="/2020/05/07/%E7%AC%AC%E4%B8%80%E7%AB%A0-js%E7%AE%80%E4%BB%8B/"&gt;第一章 js简介&lt;/a&gt;&lt;/li&gt;
+
+
+ 
+
+&lt;/ul&gt;
+&lt;h3 id="y百度前端学院"&gt;百度前端学院&lt;/h3&gt;
+&lt;ul&gt;
+
+
+&lt;li&gt;&lt;a href="/2020/05/06/%E7%99%BE%E5%BA%A6%E5%89%8D%E7%AB%AF%E5%AD%A6%E9%99%A2-day34/"&gt;第34天 我是精明的小卖家2&lt;/a&gt;&lt;/li&gt;
+
+
+ 
+
+&lt;li&gt;&lt;a href="/2020/05/05/%E7%99%BE%E5%BA%A6%E5%89%8D%E7%AB%AF%E5%AD%A6%E9%99%A2-day28/"&gt;第28天 给爱的人发个邮件吧&lt;/a&gt;&lt;/li&gt;
+
+
+ 
+
+&lt;li&gt;&lt;a href="/2020/05/04/%E7%99%BE%E5%BA%A6%E5%89%8D%E7%AB%AF%E5%AD%A6%E9%99%A2-day20/"&gt;第20天 让你和页面对话&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+ 
+</code></pre></div></div>
+
+<p>上面的代码是我加在_layout文件夹中page.html中<code class="language-plaintext highlighter-rouge">&lt;!-- Friends Blog --&gt;</code>代码块后面的。</p>
+
+<p><code class="language-plaintext highlighter-rouge"></code>可以看出归类是按照subtitle生成的。那么在哪里设置subtitle呢？在每一篇博客（_posts文件夹中.md文件）yaml 头文件中。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+layout:     post
+title:      第28天 给爱的人发个邮件吧
+subtitle:   百度前端学院
+date:       2020-05-08 17:00:00
+author:     lixiaoguai
+header-img: img/post-bg-js-version.jpg
+catalog: 	 true
+tags:
+    - ECMAScript
+    - JavaScrip
+    - script
+    - JavaScript高级程序设计
+---
+</code></pre></div></div>
+
+<p>上面是我的头文件，可以看到这篇文章被归类到“百度前端学院”类别中。效果如下图所示。</p>
+
+<p><img src="img/post_guide.PNG" alt="img" /></p>
+
+<p><a href="https://stackoverflow.com/questions/19086284/jekyll-liquid-templating-how-to-group-blog-posts-by-year/20777475#20777475">这里</a>也有按照年或者月归类的方法。</p>
+
+<h2 id="文档排序">文档排序</h2>
+<p>文档排序默认是按照yaml 头文件中的date排序，格式是YYYY-MM-DD HH:MM:SS或者YYYY-MM-DD HH:MM:SS +/-TTTT。如果你在一天之内写了多篇博客的话，可以采用YYYY-MM-DD HH:MM:SS格式具体到小时来帮助排序。如果一天只有一篇的话，date可以不用具体到小时，直接YYYY-MM-DD就可以，但是月份和日期一定要是两位数。</p>
+
+<h2 id="博客设置">博客设置</h2>
+<ul>
+  <li>根目录下面index.html设置了主页面布局：paginator属性设置分页；<code class="language-plaintext highlighter-rouge">post in paginator.posts</code>设置了每一个博客条目的内容显示和设置。可以看到index.html的yaml 头文件<code class="language-plaintext highlighter-rouge">layout: page</code>也就是采用了_layouts文件夹中page.html的布局，所以侧边栏设置可以在page.html文件中找到</li>
+  <li>_layouts文件夹主要用来存放页面布局。可以看到文件夹里面有四个html文件，分别设置了page，post，keynote的页面布局，而这三个布局都继承了default.html的布局。default.html是jekyll自动生成的。</li>
+  <li>找到设置布局位置之后，就需要修改liquid语句了。这里可参考官网给的<a href="https://jekyllrb.com/docs/liquid/">语法介绍</a>。<a href="https://jekyllrb.com/docs/variables/">varibles</a>把常用的变量都列举出来了，这里面没有的变量你也可以自己添加在相应的yaml 头文件中，以备调用。<a href="https://jekyllrb.com/docs/includes/">include</a>可以让你调用_include文件夹中的内容。</li>
+</ul>
+
+<p><strong>如果你实在找不到某个布局设置的位置，可以直接搜索这个布局下的文字，投机取巧</strong></p>
+
+<h2 id="git">Git</h2>
+<ul>
+  <li>如果文件夹中内容全部是新建的，不必一个一个文件<code class="language-plaintext highlighter-rouge">git add XXX.md</code>，可以直接<code class="language-plaintext highlighter-rouge">git add .</code>将整个文件夹add进去，之后继续<code class="language-plaintext highlighter-rouge">git commit -m "update"</code> 和 <code class="language-plaintext highlighter-rouge">git push</code>。如果对本地项目中文件进行删除，想要同步到github也可以采用<code class="language-plaintext highlighter-rouge">git add .</code></li>
+  <li>如果一直需要邮箱验证，可以把personal setting里的email里的<code class="language-plaintext highlighter-rouge">keep my email address private</code>前面对勾去掉。</li>
+  <li>如果git 推送更新出现错误： <code class="language-plaintext highlighter-rouge">Updates were rejected because the remote contains work that you do</code>是因为本地仓库与线上仓库的内容不匹配，或者说本地相对于远程不是最新，先pull更新本地，再把自己的push上去。但是本地确认无误的话可以直接<code class="language-plaintext highlighter-rouge">git push -f</code>强行上传。</li>
+  <li>对fork来的repo进行commit 是不会计算在你自己的Contribution中，格子是不会变绿的，除非<code class="language-plaintext highlighter-rouge">pull request</code>并被原作者接受（但是别人为什么要接受你自己的博客呢）</li>
+</ul>
+
+<h2 id="更改网页标签栏图标">更改网页标签栏图标</h2>
+<p>图标问题真的困扰了我很久，每次看到不是自己的图标甚至不想写博客（这不是我在偷懒！！！）
+目前最流行的图标格式是icon fonts，<a href="./2020-05-24-网页图标.md">这篇文章</a>介绍了如何在博客中添加
+head.html中使用出现问题</p>
+
+<h2 id="page-build-failure">page build failure</h2>
+<p>如果你对代码修改之后，刷新几次之后博客相应内容一直没有改变，可以去你Github注册邮箱看看里面是否收到了page build failure的邮件。
+page build failure一般是因为出现了语法错误，仔细阅读”with the following error”后面的内容。</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The page build failed for the `master` branch with the following error:
+
+The tag `for` on line 67 in `README.md` was not properly closed. For more information, see https://help.github.com/en/github/working-with-github-pages/troubleshooting-jekyll-build-errors-for-github-pages-sites#tag-not-properly-closed.
+</code></pre></div></div>
+<p>例如上面这段代码指出是”README.md”文件的第67行出现问题，有时候可能是这一行上下行的问题。然后提示说for标签没有闭合，在67行附近找到for，发现是在引用程序的时候没有加程序的引号。</p>
+
+<h2 id="web-app-manifests">Web app manifests</h2>
+<p>https://juejin.im/post/5d54f29af265da03cc08b45a</p>
+
+<ul>
+  <li>连接服务器
+https://developer.mozilla.org/en-US/docs/Web/Manifest</li>
+</ul>
+
+<h2 id="sitebaseurl">site.baseurl</h2>
+<p>head 13 16 19行设置 
+../导致博客页面的logo加载不出来</p>
+
+<h2 id="logo">logo</h2>
+<p>https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/link</p>
+
+<h2 id="阿里云配置">阿里云配置</h2>
+<ul>
+  <li>
+    <p>讲解
+https://juejin.im/post/5d54f29af265da03cc08b45a
+https://segmentfault.com/a/1190000009363890
+https://segmentfault.com/a/1190000009363890#item-5</p>
+  </li>
+  <li>
+    <p>服务器登录方法
+https://yq.aliyun.com/articles/699301</p>
+  </li>
+  <li>
+    <p>用户名错误
+https://blog.csdn.net/theweather/article/details/81083054
+windows也是root</p>
+  </li>
+  <li>
+    <p>windows远程桌面
+https://help.aliyun.com/document_detail/25435.html
+https://blog.csdn.net/CSDN2497242041/article/details/78776600
+3389端口是Windows远程桌面端口</p>
+  </li>
+</ul>
+
+<p>安装Git及配置仓库
+应该这样
+sudo adduser git</p>
+
+<ul>
+  <li>git
+https://blog.csdn.net/qq_25458977/article/details/87875641
+https://blog.csdn.net/wwwwxhh/article/details/51514424</li>
+</ul>
+
+<p>git remote
+https://blog.csdn.net/ltstud/article/details/79935001</p>
+
+<p>https://blog.csdn.net/qq_41781322/article/details/88051787</p>
+
+<p>git push -u origin master 出错
+git push –set-upstream origin master 正确
+为啥</p>
+
+<h2 id="网站分析">网站分析</h2>
+<p>https://zhuanlan.zhihu.com/p/59037364</p>
+
+<h2 id="todo">ToDo</h2>
+<ul>
+  <li>
+    <p>主题
+红白机logo
+不同主题不同配色模块 主题图片
+红白机主题
+404图片</p>
+  </li>
+  <li>
+    <p>内容和细节
+aboutme 内容
+主页导航栏 字体
+不同模块图片长度不同 图片本身问题
+子页面和主题页面图片长度不同 图片本身问题
+评论功能 🆗
+访问量统计 🆗
+主页面李小怪旁边增加logo</p>
+  </li>
+  <li>
+    <p>亮点
+鼠标位于页面上下左右分别显示手柄四个按键
+404动画 显示黑魂三篝火 long may the sunshine！
+未联网动画 显示游戏
+页面右侧 义勇 荻饼 蝴蝶</p>
+  </li>
+  <li>
+    <p>像素风格
+新字体：偏小 侧边栏tags；description；导航栏Home ABOUT TAGS 看不清
+加载页面后需要刷新才显示像素风格</p>
+  </li>
+</ul>
+:ET

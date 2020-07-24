@@ -1,0 +1,63 @@
+I"><h2 id="执行环境">执行环境</h2>
+<ul>
+  <li>每个执行环境都有一个与之关联的<strong>变量对象</strong></li>
+  <li>环境中定义的所有变量都保存在这个对象中</li>
+  <li>执行环境分为三种(全局执行环境，函数执行环境，evel()执行环境)</li>
+  <li>每个函数有自己的<strong>执行环境</strong>，当一个函数被调用时，该函数环境的变量对象就被压入一个环境栈中。而在函数执行之后，栈将该函数的变量对象弹出，把控制权交给之前的执行环境变量对象。</li>
+  <li>未进入执行阶段之前，变量对象(VO)中的属性都不能访问！但是进入执行阶段之后，变量对象(VO)转变为了活动对象(AO)，里面的属性都能被访问了，然后开始进行执行阶段的操作。</li>
+  <li>AO = VO + function parameters + arguments</li>
+  <li>函数内部声明变量的时候，一定要使用var命令。如果不用的话，你实际上声明了一个全局变量！</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var scope = "global";
+      function fn(){
+         console.log(scope);//undefined
+         var scope = "local";
+         console.log(scope);//local;
+      }
+      fn(); 
+</code></pre></div></div>
+<p>分析：第一个输出居然是undefined，原本以为它会访问外部的全局变量(scope=”global”)，但是并没有。这可以算是javascript的一个特点，只要函数内定义了一个局部变量，函数在解析的时候都会将这个变量“提前声明”，他就等价于下面的代码：
+```     var scope = “global”;
+      function fn(){
+         var scope;//提前声明了局部变量
+         console.log(scope);//result:undefined
+         scope = “local”;
+         console.log(scope);//result:local;
+      }
+      fn();</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## 作用域链 ##
+```    function outer(){
+         var scope = "outer";
+         function inner(){
+            return scope;
+         }
+         return inner;
+      }
+      var fn = outer();
+      fn();
+</code></pre></div></div>
+<p>上面代码的作用域链如下图所示</p>
+
+<p><img src="/img/环境变量示意图.png" alt="img" /></p>
+
+<h2 id="作用域">作用域</h2>
+<ul>
+  <li>没有块级作用域
+<code class="language-plaintext highlighter-rouge">for (var i=0; i&lt;10; i++) {
+       continue;
+    }
+    console.log(i)//10
+</code></li>
+</ul>
+
+<h2 id="管理内存">管理内存</h2>
+<p><code class="language-plaintext highlighter-rouge">function createPerson(name) {
+    var localPerson = new Object();
+    localPerson.name = name;
+    return localPerson;
+}
+var globalPerson = createPerson("Jess");
+globalPerson = null;//手工解除globalPerson的引用
+</code></p>
+:ET

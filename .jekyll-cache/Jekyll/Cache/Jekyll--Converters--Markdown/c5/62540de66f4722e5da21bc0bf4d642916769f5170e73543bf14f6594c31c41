@@ -1,0 +1,11 @@
+I"�<p>JSON是一种<strong>数据格式</strong></p>
+<h2 id="语法">语法</h2>
+<ul>
+  <li>简单值：字符串，数值，布尔值，null 但是没有undefined</li>
+  <li>对象：键值对 <strong>JSON</strong>中的对象要求给属性加引号</li>
+  <li>数组：有序的值的列表 JSON数组没有变量和分号</li>
+</ul>
+
+<h2 id="解析与序列化">解析与序列化</h2>
+<p>可以把JSON数据结构解析为有用的JS对象</p>
+:ET

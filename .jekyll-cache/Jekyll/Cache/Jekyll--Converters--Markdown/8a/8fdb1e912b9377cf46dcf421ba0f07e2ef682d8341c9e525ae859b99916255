@@ -1,0 +1,170 @@
+I"�%<h2 id="icon-fonts">icon fonts</h2>
+<h3 id="什么是icon-fonts">什么是icon fonts</h3>
+<p>顾名思义，IconFont 就是字体图标。严格地说，就是一种字体，但是，它们不包含字母或数字，而是包含符号和字形。您可以使用 CSS 设置样式，就像设置常规文本一样</p>
+
+<p>IconFont 的使用方式和 WebFont 如出一辙，又把大量的图标变成了一个字体文件，<strong>减少了请求数</strong>，而且有效<strong>减小请求体积</strong>。当一个网页有自己的图标字体库之后，可以复用在很多地方，<strong>减少很多二次开发成本</strong>。因此现代网页多会使用 IconFont 来展示图标</p>
+
+<h2 id="优缺点">优缺点</h2>
+<h3 id="优点">优点</h3>
+
+<p>可以方便地将任何 CSS 效果应用于它们。
+因为它们是矢量图形，所以它们是可伸缩的。这意味着我们可以在不降低质量的情况下伸缩它们。
+我们只需要发送一个或少量 HTTP 请求来加载它们，而不是像图片，可能需要多个 HTTP 请求。
+由于尺寸小，它们加载速度快。
+它们在所有浏览器中都得到支持（甚至支持到 IE6）。</p>
+
+<h3 id="缺点">缺点</h3>
+
+<p>不能用来显示复杂图像
+通常只限于一种颜色，除非应用一些 CSS 技巧
+字体图标通常是根据特定的网格设计的，例如 16x16, 32×32, 48×48等。如果由于某种原因将网格系统改为25×25，可能不会得到清晰的结果</p>
+
+<h2 id="资源网站">资源网站</h2>
+<p>你可以从网页中下载到免费的icon font，比如<a href="http://www.entypo.com/"> Entypo</a>,<a href="https://fontawesome.com/?from=io">Font Awesome</a>,<a href="https://material.io/resources/icons/?style=baseline">Material Design</a>,<a href="https://icomoon.io/">IcoMoon</a>（前面均需要科学上网）以及阿里妈妈的<a href="https://www.iconfont.cn/">iconfont</a></p>
+
+<h2 id="icon-fonts原理">icon fonts原理</h2>
+<p>IconFont 的使用原理来自于 css 的 @font-face 属性。这个属性用来定义一个新的字体，基本用法如下:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@font-face {
+  font-family: &lt;YourFontName&gt;;
+  src: &lt;url&gt; [&lt;format&gt;],[&lt;source&gt; [&lt;format&gt;]], *;
+  [font-weight: &lt;weight&gt;];
+  [font-style: &lt;style&gt;];
+}
+
+/*font-family：为载入的字体取名字。*/
+
+/*src：[url]加载字体，可以是相对路径，可以是绝对路径，也可以是网络地址。[format]定义的字体的格式，用来帮助浏览器识别。主要取值为：truetype(.ttf)、opentype（.otf）、truetype-aat、embedded-opentype(.eot)、svg(.svg)、woff(.woff)。*/
+
+/*font-weight：定义加粗样式。*/
+
+/*font-style：定义字体样式。*/
+
+</code></pre></div></div>
+<p>format对应字体格式 以及 常见兼容性写法：</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@font-face {
+ font-family: 'defineName';
+ src: url('../fonts/custom-font.eot');
+ src: url('../fonts/custom-font.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/custom-font.woff') format('woff'),
+      url('../fonts/custom-font.ttf') format('truetype'),
+      url('../fonts/custom-font.svg#defineName') format('svg');
+ font-weight: normal;
+ font-style: normal;
+}
+
+/*iefix有何作用
+IE9 之前的版本没有按照标准解析字体声明，当 src 属性包含多个 url 时，它无法正确的解析而返回 404 错误，而其他浏览器会自动采用自己适用的 url。因此把仅 IE9 之前支持的 EOT 格式放在第一位，然后在 url 后加上 ?，这样 IE9 之前的版本会把问号之后的内容当作 url 的参数。至于 #iefix 的作用，一是起到了注释的作用，二是可以将 url 参数变为锚点，减少发送给服务器的字符。*/
+
+/*为何有两个src？
+绝大多数情况下，第一个 src 是可以去掉的，除非需要支持 IE9 下的兼容模式。在 IE9 中可以使用 IE7 和 IE8 的模式渲染页面，微软修改了在兼容模式下的 CSS 解析器，导致使用 ? 的方案失效。由于 CSS 解释器是从下往上解析的，所以在上面添加一个不带问号的 src 属性便可以解决此问题。*/
+</code></pre></div></div>
+<p>定义好自己的 font-face 后，就有了新的 IconFont，给要使用这个 IconFont 的对象赋予对应的 font-family 即可。</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.example {
+  font-family: 'defineName';
+  content: '/e103';
+}
+/*这个例子就会将 example 选中的元素渲染为 /e103 对应的 icon。*/
+</code></pre></div></div>
+
+<h2 id="使用方法">使用方法</h2>
+<p>以新版Iconfont-阿里巴巴矢量图标库作为例子。</p>
+<h3 id="下载使用">下载使用</h3>
+<ul>
+  <li>首先在Iconfont-阿里巴巴矢量图标库上面将你需要的图标点击购物车按钮加入“暂存架”</li>
+  <li>选择完所有要用的图标后“存储为项目”</li>
+  <li>在”我的项目”中找到要用的图标下载到本地</li>
+  <li>上面下载的文件都放在一个文件夹内,然后放在项目目录中,再在项目中引入iconfont.css文件,或将iconfont.css文件里的内容复制粘贴到你当前项目的css内容里
+具体参考<a href="https://yq.aliyun.com/articles/519353">使用教程</a>
+<strong>下载使用共有三种使用方式</strong></li>
+</ul>
+
+<h4 id="1-unicode引用">1. unicode引用</h4>
+
+<ul>
+  <li>使用方法
+第一步：拷贝项目下面生成的font-face
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@font-face { font-family:'iconfont';
+ src: url('iconfont.eot'); src: url('iconfont.eot?#iefix')
+ format('embedded-opentype'), url('iconfont.woff')
+ format('woff'), url('iconfont.ttf')
+ format('truetype'), url('iconfont.svg#iconfont')
+ format('svg');}
+</code></pre></div>    </div>
+    <p>第二步：定义使用iconfont的样式</p>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.iconfont{ font-family:"iconfont"
+ !important; font-size:16px;font-style:normal; -webkit-font-smoothing: antialiased; -webkit-text-stroke-width: 0.2px; -moz-osx-font-smoothing: grayscale;}
+</code></pre></div>    </div>
+    <p>第三步：挑选相应图标并获取字体编码，应用于页面</p>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;i class="iconfont"&gt;&amp;#x33;&lt;/i&gt;
+</code></pre></div>    </div>
+  </li>
+  <li>特点</li>
+</ul>
+
+<p>兼容性最好，支持ie6+，及所有现代浏览器。
+支持按字体的方式去动态调整图标大小，颜色等等。
+但是因为是字体，所以不支持多色。只能使用平台里单色的图标，就算项目里有多色图标也会自动去色。</p>
+
+<h4 id="2font-class引用">2.font-class引用</h4>
+<ul>
+  <li>使用方法</li>
+</ul>
+
+<p>第一步：引入项目下面生成的fontclass代码：</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;link rel="stylesheet" type="text/css" href="./iconfont.css"&gt;
+</code></pre></div></div>
+<p>第二步：挑选相应图标并获取类名，应用于页面：</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;i class="iconfonticon-xxx"&gt;&lt;/i&gt;
+</code></pre></div></div>
+<p>“iconfont”是你项目下的font-family。可以通过编辑项目查看，默认是”iconfont”。</p>
+
+<ul>
+  <li>特点
+1.兼容性良好，支持ie8+，及所有现代浏览器。
+2.相比于unicode语意明确，书写更直观。可以很容易分辨这个icon是什么。
+3.因为使用class来定义图标，所以当要替换图标时，只需要修改class里面的unicode引用。</li>
+</ul>
+
+<h4 id="3symbol引用">3.symbol引用</h4>
+<ul>
+  <li>步骤
+第一步：引入项目下面生成的symbol代码：
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;script src="./iconfont.js"&gt;&lt;/script&gt;
+</code></pre></div>    </div>
+    <p>第二步：加入通用css代码（引入一次就行）：
+```</p>
+  </li>
+</ul>
+<style type="text/css">
+.icon
+ { width: 1em;
+   height: 1em; 
+   vertical-align: -0.15em; 
+   fill: currentColor; 
+  overflow: hidden;}
+</style>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>第三步：挑选相应图标并获取类名，应用于页面：
+
+</code></pre></div></div>
+<p>&lt;svgclass=”icon” aria-hidden=”true”&gt; &lt;usexlink:href=”#icon-xxx”&gt;&lt;/use&gt;&lt;/svg&gt;</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- 特点
+通过一些技巧，支持像字体那样，通过font-size,color来调整样式。
+兼容性较差，支持 ie9+,及现代浏览器。
+浏览器渲染svg的性能一般，还不如png。
+
+下载使用的一个缺点是添加图标的话要重新把所有图标再下载一遍覆盖原来的文件，如果是在线链接只要重新生成一次链接就好了。
+
+### 在线使用 ###
+复制链接导入到代码中，例如：
+</code></pre></div></div>
+<link rel="stylesheet" href="http://at.alicdn.com/t/font_1462780150_442243.css" />
+
+<p>```</p>
+
+<h2 id="图片">图片</h2>
+<h2 id="svg">SVG</h2>
+
+<h2 id="reference">Reference</h2>
+<p>https://juejin.im/post/5bee3c2451882532f40fc7c2#%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84-iconfont</p>
+:ET

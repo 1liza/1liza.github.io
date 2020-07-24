@@ -1,0 +1,77 @@
+I"d<h2 id="dom">DOM</h2>
+<p>将任何HTML或者XML文档描绘成一个由多层节点构成的结构。节点分为不同的类型，每种类型分别表示文档中不同的信息和标记。
+—-</p>
+<h2 id="node类型">Node类型</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (someNode.nodeType == 1) {
+    alert("Node is an element"); //确认someNode确实是一个元素
+}
+</code></pre></div></div>
+<p>nextSibling previousSibling firstChild lastChild childNode[0]
+appendChild insertBefore</p>
+
+<h2 id="document类型">Document类型</h2>
+<p>write() body() title() domain()</p>
+
+<h2 id="element类型">Element类型</h2>
+<ul>
+  <li>HTML元素：id title dir</li>
+  <li>特性：getAttribute() setAttribute()</li>
+  <li>attribute属性：getNamedItem() removeNamedItem() setNamedItem()</li>
+  <li>creatElement</li>
+</ul>
+
+<h2 id="text类型">Text类型</h2>
+<ul>
+  <li>appendData</li>
+  <li>deleteData</li>
+  <li>insertData</li>
+  <li>replaceData</li>
+  <li>splitText</li>
+  <li>substringData</li>
+</ul>
+
+<h2 id="attr类型">Attr类型</h2>
+<ul>
+  <li>
+    <h2 id="属性name-value-specified">属性：name value specified</h2>
+    <h2 id="dom-操作">DOM 操作</h2>
+  </li>
+  <li>动态脚本
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var script = document.creatElement("script”);
+script.type = "text/javascript";
+//script.appendChild(document.creatTextNode("function sayHi() {alert("hi");}")) // 不建议使用，IE将&lt;script&gt;视为特殊元素，不允许访问DOM及子节点
+script.text = "function sayHi() {alert("hi");}"; //可以使用&lt;script&gt;元素的text属性指定js代码
+document.body.appendChild(script);
+</code></pre></div>    </div>
+  </li>
+  <li>动态样式
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var style = document.creatElement("style");
+script.type = "text/css";
+try {
+  style.appendChild(document.creatTextNode("body {background-color : red}");
+} catch (ex) {
+  style.styleSheet.cssText = "body {background-color:red}";
+}
+var head = document.getElementsByTagName("head")[0];
+head.appendChild(style);
+</code></pre></div>    </div>
+  </li>
+  <li>操纵表格
+caption 保存<code class="language-plaintext highlighter-rouge">&lt;caption&gt;</code>元素的指针
+tBodies <code class="language-plaintext highlighter-rouge">&lt;tbody&gt;</code>的HTMLCollection
+tFoot 保存<code class="language-plaintext highlighter-rouge">&lt;tfoot&gt;</code>元素的指针
+tHead 保存<code class="language-plaintext highlighter-rouge">&lt;thead&gt;</code>元素的指针
+rows 表格中所有行的HTMLCollection
+createTHead 创建<code class="language-plaintext highlighter-rouge">&lt;thead&gt;</code>元素，放到表格中，返回引用
+createTFoot
+createCaption
+deleteHead 删除<code class="language-plaintext highlighter-rouge">&lt;thead&gt;</code>元素
+deleteTFoot
+deleteCaption
+deleteRow(pos) 删除指定位置的行
+insertRow(pos) 向指定位置插入一行，返回新插入行的引用
+cells
+deleteCell(pos)
+insertCell(pos)</li>
+</ul>
+:ET
