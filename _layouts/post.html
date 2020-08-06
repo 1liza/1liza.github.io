@@ -12,7 +12,18 @@ layout: default
         position: relative;
         background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')
     }
-    
+    .header-mask:after{
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: rgba(127, 127, 127, 0.5);
+        background-image: radial-gradient(black 23%, transparent 33%);
+        background-size: 2px 2px;
+    }
     /* {% if page.header-mask %}
     header.intro-header .header-mask{
         width: 100%;

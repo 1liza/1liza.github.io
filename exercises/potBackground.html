@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+    .image {
+	width: 800px;
+	height: 600px;
+	position: relative;
+	background: url('https://upload.wikimedia.org/wikipedia/commons/6/6e/Rathong_from_Zemathang2.jpg');
+	background-size: cover;
+}
+.image:after {
+	content: '';
+	display: block;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background: rgba(127, 127, 127, 0.5);
+	background-image: radial-gradient(black 33%, transparent 33%);
+	background-size: 2px 2px;
+}
+    </style>
+</head>
+<body>
+    <div class="image"></div>
+</body> 
+</html>
