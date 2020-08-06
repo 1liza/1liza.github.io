@@ -30,6 +30,9 @@ layout: default
     /* this is needed so Safari keeps sharp edges */
     transform: scale(1);
     }
+    .container {
+        z-index: 50
+    }
 </style>
 <header class="intro-header placeholder" >
     <img src='{{ site.baseurl }}/{% if page.small-img %}{{ page.small-img }}{% else %}{{ site.header-img }}{% endif %}' class="img-small">
