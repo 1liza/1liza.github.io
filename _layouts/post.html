@@ -195,9 +195,9 @@ window.onload = function() {
     
     // 2: load large image
     var imgLarge = new Image();
-    imgLarge.src = placeholder.dataset.large; 
+    imgLarge.src = "{{ page.header-img }}"; 
     imgLarge.onload = function () {
-        imgLarge.classList.add('loaded');
+    imgLarge.classList.add('loaded');
     };
     placeholder.appendChild(imgLarge);
 }
