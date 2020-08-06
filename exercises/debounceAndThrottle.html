@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <span>防抖后input</span><input id="debounce"><br/>
+    <span>节流后input</span><input id="throttle"><br/>
+    <script>
+        //模拟一段ajax请求
+        function ajax(content) {
+            //模拟数据发送
+            console.log(content)
+        }
+
+        function debounce(func, delay) {
+            return function(args) {
+                let that = this
+                let _args = args
+                clearTimeout(func.id)
+                func.id = setTimeout(function () {
+                func.call(that, _args)
+                }, delay)
+            }
+        }
+
+        let inputa = document.getElementById('debounce')
+        let debounceAjax = debounce(ajax, 500)
+
+        inputa.addEventListener('keyup', function(e) {
+        debounceAjax(e.target.value)
+        })
+
+        // 节流
+        function tottles(func, delay) {
+            let last
+            //每次输入实际执行的是下面的程序
+            return function(target) {
+                let now = +new Date()
+                let that = this
+                let _target = target
+                if (last && now-last<delay) {
+                    // console.log(func.id)
+                    clearTimeout(func.id)
+                    func.id = setTimeout(function(_target) {
+                        last = now
+                        func.call(that, _target)
+                    }, delay, _target)
+                    // last = now// 停止输入才显示
+                } else {
+                    last = now
+                    func.call(that, _target)
+                }
+            }
+        }
+
+        let inputb = document.getElementById('throttle')
+        let throttlesAjax = tottles(ajax, 1000)
+
+        inputb.addEventListener('keyup', function(e) {
+            throttlesAjax(e.target.value)
+        })
+    </script>
+</body>
+</html>
