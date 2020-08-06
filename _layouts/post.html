@@ -2,40 +2,28 @@
 layout: default
 ---
 
+<!-- Image to hack wechat -->
+<!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
 <!-- Post Header -->
 <style type="text/css">
-    .placeholder {
-    background-color: #f6f6f6;
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
-    overflow: hidden;
+    header.intro-header{
+        position: relative;
+        background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')
     }
-
-    .placeholder img {
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    left: 0;
-    width: 100%;
-    transition: opacity 1s linear;
+    
+    /* {% if page.header-mask %}
+    header.intro-header .header-mask{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: rgba(0,0,0, {{ page.header-mask }});
     }
-
-    .placeholder img.loaded {
-    opacity: 1;
-    }
-
-    .img-small {
-    filter: blur(50px);
-    /* this is needed so Safari keeps sharp edges */
-    transform: scale(1);
-    }
-    .container {
-        z-index: 50
-    }
+    {% endif %} */
 </style>
-<header class="intro-header placeholder" >
-    <img src='{{ site.baseurl }}/{% if page.small-img %}{{ page.small-img }}{% else %}{{ site.header-img }}{% endif %}' class="img-small">
+<header class="intro-header" >
+    <div class="header-mask"></div>
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -182,30 +170,6 @@ layout: default
     </div>
 </article>
 
-{% if page.small-img %}
-<script type="text/javascript">
-window.onload = function() {
-  
-    var placeholder = document.querySelector('.placeholder'),
-    small = placeholder.querySelector('.img-small')
-    
-    // 1: load small image and show it
-    var img = new Image();
-    img.src = small.src;
-    img.onload = function () {
-    small.classList.add('loaded');
-    };
-    
-    // 2: load large image
-    var imgLarge = new Image();
-    imgLarge.src = "{{ site.baseurl }}/{{ page.header-img }}"; 
-    imgLarge.onload = function () {
-    imgLarge.classList.add('loaded');
-    };
-    placeholder.appendChild(imgLarge);
-}
-</script>
-{% endif %}
 
 {% if site.disqus_username %}
 <!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
