@@ -195,7 +195,7 @@ window.onload = function() {
     
     // 2: load large image
     var imgLarge = new Image();
-    imgLarge.src = "{{ page.header-img }}"; 
+    imgLarge.src = "{{ site.baseurl }}/{{ page.header-img }}"; 
     imgLarge.onload = function () {
     imgLarge.classList.add('loaded');
     };
