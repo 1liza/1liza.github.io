@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .left {
+            float: left;
+            width: 100px;
+            height: 200px;
+            background: red;
+        }
+        .right {
+            float: right;
+            width: 200px;
+            height: 200px;
+            background: blue;
+        }
+        .main {
+            margin-left: 120px;
+            margin-right: 220px;
+            height: 200px;
+            background: green;
+        }
+
+        .container {
+            margin-left: 120px;
+            margin-right: 220px;
+        }
+        .cup-main {
+            float: left;
+            width: 100%;
+            height: 300px;
+            background: green;
+        }
+        .cup-left {
+            position: relative;
+            left: -120px;
+            float: left;
+            height: 300px;
+            width: 100px;
+            margin-right: -100%;
+            background: red;
+        }
+        .cup-right {
+            position: relative;
+            right: -220px;
+            float: right;
+            height: 300px;
+            width: 200px;
+            margin-left: -200px;
+            background: blue;
+        }
+
+        .fly-content {
+            float: left;
+            width: 100%
+        }
+        .fly-main {
+            height: 200px;
+            margin-left: 110px;
+            margin-right: 220px;
+            background: green
+        }
+        .fly-main:after {
+            content: '';
+            display: block;
+            font-size: 0;
+            height: 0;
+            zoom: 1;
+            clear: both;
+        }
+        .fly-left {
+            float: left;
+            height: 200px;
+            width: 100px;
+            background: red;
+        }
+        .fly-right {
+            float: right;
+            height: 200px;
+            width: 200px;
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="left"></div>
+    <div class="right"></div>
+    <div class="main"></div>
+    <br/>
+    <div class="container">
+        <div class="cup-left"></div>
+        <div class="cup-right"></div>
+        <div class="cup-main"></div>
+    </div>
+    <div style="height:20px; clear:both"></div>
+    <div class="fly-content">
+        <div class="fly-left"></div>
+        <div class="fly-right"></div>
+        <div class="fly-main"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container1 {
+            position: relative;
+            height: 200px;
+            width: 200px;
+            background: blue;
+            margin-bottom: 20px;
+        }
+        #div1 {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto 0;
+            height: 100px;
+            width: 50%;
+            background: red
+        }
+
+        .container2 {
+            width:200px;
+            height: 200px;
+            background: blue;
+            margin-bottom: 20px;
+        }
+        #div2 {
+            width: 50%;
+            height: 100px;
+            margin: 0 auto;
+            background: red;
+        }
+
+        .container3 {
+            position: relative;
+            margin-bottom: 10%;
+            width: 500px;
+            height: 200px;
+            background: blue;
+        }
+        #div3 {
+            position: absolute;
+            height: 50%;
+            width: 50%;
+            top: 50%;
+            margin-top: -50px;
+            background: red;
+        }
+
+        .container4 {
+            display: table;
+            margin-bottom: 20px;
+            width: 200px;
+            height: 200px;
+            background: blue;
+        }
+        #div4 {
+            display: table-cell;
+            vertical-align: middle;
+            background: red;
+        }
+
+        .container5 {
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 50px;
+            height: 50px;
+            width: 100%;
+            background: red
+        }
+
+        .container6 {
+            margin-bottom: 20px;
+            width: 200px;
+            height: 200px;
+            background: blue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #div6 {
+            height: 50%;
+            width: 50%;
+            background: red
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container1">
+        <div id="div1"></div>
+    </div>
+ 
+    <div class="container2">
+        <div id="div2"></div>
+    </div>
+
+    <div class="container3">
+        <div id="div3"></div>
+    </div>
+
+    <div class="container4">
+        <div id="div4">我是内容</div>
+    </div>
+
+    <div class="container5">我是内容</div>
+
+    <div class="container6">
+        <div id="div6"></div>
+    </div>
+</body>
+</html>
