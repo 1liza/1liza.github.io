@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .switch {
+            margin: 20px 20px 0 0;
+            display: flex;
+            align-items: center;
+            width: auto;
+        }
+        .checkbox-input {
+            display:none
+        }
+        .checkbox {
+            -webkit-transition: background-color 0.3s;
+            transition: background-color 0.3s;
+            background-color: #fff;
+            border: 1px solid #d7d7d7;
+            border-radius: 3px;
+            width: 18px;
+            height: 18px;
+            vertical-align:middle;
+            margin: 0 5px;
+        }
+        .checkbox-input:checked+.checkbox {
+            background-color:#57ad68;
+        }
+        .checkbox-input:checked+.checkbox:after {
+            content: '\2714';
+            display: inline-block;
+            width: 100%;
+            height: 16px;
+            text-align: center;
+            line-height: 16px;
+            color: #fff;
+            /* font-size: 12px; */
+            box-shadow: 0 0 4px #57ad68;
+        }
+    </style>
+</head>
+<body>
+    <label class="switch">
+        <input type="checkbox" id="checkbox" class="checkbox-input">
+        <label for="checkbox" class="checkbox"></label>
+        <span>美化CheckBox</span>
+    </label>
+</body>
+</html>

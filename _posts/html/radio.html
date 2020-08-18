@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style type="text/css">
+        .switch {
+            display: flex;
+            align-items: center;
+            width: auto;
+            float: left;
+        }
+        .radio-beauty-container .radio-beauty {
+            width: 16px;
+            height: 16px;
+            box-sizing: border-box;
+            display: inline-block;
+            border: 1px solid #d7d7d7;
+            margin: 0 5px;
+            border-radius: 50%;
+            transition: 0.2s;
+        }
+        .radio-beauty-container input[type="radio"]:checked+.radio-beauty {
+            border: solid 1px green;
+            padding: 3px;
+            background-color: green;
+            background-clip: content-box;
+            box-shadow: inset 0 0 1px rgba(0,128,0, 0.2), 0 0 3px green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="radio-beauty-container">
+        <label class="switch">
+            <span class="radio-name">radio2</span>
+            <input type="radio" name="radioName" id="radioName2" hidden/>
+            <label for="radioName2" class="radio-beauty"></label>
+        </label>
+        <label class="switch">
+            <span class="radio-name">radio3</span>
+            <input type="radio" name="radioName" id="radioName3" hidden/>
+            <label for="radioName3" class="radio-beauty"></label>
+        </label>
+    </div>
+</body>
+
+</html>

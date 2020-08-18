@@ -1,0 +1,54 @@
+<html>
+
+<head>
+    <style type="text/css">
+        .switch-slide-label {
+            display: block;
+            width: 34px;
+            height: 18px;
+            background: #ccc;
+            border-radius: 30px;
+            cursor: pointer;
+            position: relative;
+            -webkit-transition: 0.3s ease;
+            transition: 0.3s ease;
+        }
+        
+        .switch-slide-label:after {
+            content: '';
+            display: block;
+            width: 16px;
+            height: 16px;
+            border-radius: 100%;
+            background: #fff;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+            position: absolute;
+            left: 1px;
+            top: 1px;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            -webkit-transition:0.3s ease;
+            transition:0.3s ease;
+        }
+        
+        .switch-slide input:checked+label {
+            background: #34bf49;
+            transition: 0.3s ease;
+        }
+        .switch-slide input:checked+label:after {
+            left: 17px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="radio-beauty-container">
+            <label class="switch-slide">
+                <input type="checkbox" id="menu-right" hidden>
+                <label for="menu-right" class="switch-slide-label"></label>
+            </label>
+    </div>
+</body>
+
+</html>
