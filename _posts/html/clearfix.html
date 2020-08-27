@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .news {
+            background-color: gray;
+            border: solid 1px black;
+            }
+
+            .news img {
+            float: left;
+            }
+
+            .news p {
+            float: right;
+            transform:scale(0.3)
+            }
+            .news::after {
+                content: '';
+                clear:both;
+                /* clear只能用在块级元素上 */
+                display:block;
+                height:0;
+                visibility:hidden;
+            }
+            /* .clear {
+            clear: both;
+            } */
+        </style>
+    </head>
+    <body>
+        <div class="news">
+            <img src="../img/box.jpg" />
+            <p>some text</p>
+            <div class="clear"></div>
+        </div>
+    </body>
+</html>

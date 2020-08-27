@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <canvas id="canvas" width="150" height="150"></canvas>
+        <script type="text/javascript">
+            const can = document.getElementById('canvas')
+            let ctx = can.getContext('2d')
+
+            ctx.beginPath()
+            ctx.strokeStyle = 'red'
+            ctx.arc(50, 50, 50, 0, 2*Math.PI)
+            ctx.moveTo(85, 50)
+            ctx.arc(50, 50, 35, 0, Math.PI)
+            ctx.moveTo(25,25)
+            ctx.arc(25,25,2,0, 2*Math.PI)
+            ctx.moveTo(75, 25)
+            ctx.arc(75,25,2,0, 2*Math.PI)
+            ctx.stroke()
+
+            can.onclick= function() {
+                alert('smile')
+            }
+        </script>
+    </body>
+</html>

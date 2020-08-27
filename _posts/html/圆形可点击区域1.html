@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        .circle {
+            height: 100px;
+            width: 100px;
+            border-radius: 100%;
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="circle"></div>
+    <script type="text/javascript">
+        const c = document.getElementsByClassName('circle')[0]
+        c.onclick = function() {
+            alert('click')
+        }
+    </script>
+</body>
+</html>

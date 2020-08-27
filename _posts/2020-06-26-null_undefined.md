@@ -51,6 +51,7 @@ false==""// ture
 
 ## 判断一个对象是否存在
 
+```js
 - 方法1
 
 　　if (!myObj) {
@@ -123,3 +124,4 @@ false==""// ture
 　　　　this.myObj = { };
 
 　　}
+```

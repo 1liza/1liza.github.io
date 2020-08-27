@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <canvas id="canvas" width="200" height="200"></canvas>
+        <script type="text/javascript">
+            const can = document.getElementById('canvas')
+            const ctx = can.getContext('2d')
+            
+            ctx.beginPath()
+            ctx.arc(100, 100, 100, 0, 2*Math.PI);
+            ctx.stroke()
+            
+            const x=100
+            const y=100
+            can.onclick = function(e) {
+                let tmp = Math.sqrt(Math.pow((x-e.clientX),2) + Math.pow(y-e.clientY,2))
+                if (tmp<=100) {
+                    alert(tmp)
+                }
+            }
+        </script>
+    </body>
+</html>
