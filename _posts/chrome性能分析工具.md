@@ -7,3 +7,5 @@
 ## 使用Performance(Timeline)分析
 
 JS脚本的执行时间过长。
+
+https://zhuanlan.zhihu.com/p/30703640
