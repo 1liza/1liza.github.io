@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            div {
+                /* 单行溢出显示省略号
+                overflow: hidden；
+                text-overflow: ellipsis;
+                white-sapce: nowarp; */
+
+                /* 多行溢出显示省略号 */
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 3;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            1.之前要实现横列的web布局，通常就是float或者display:inline-block;但是都不能做到真正的流体布局。至少width要自己去算百分比。2.flexiblebox就可以实现真正意义上的流体布局。只要给出相应属性，浏览器会帮我们做额外的计算。3.box-flex是css3新添加的盒子模型属性，它的出现可以解决我们通过N多结构、css实现的布局方式。经典的一个布局应用就是布局的垂直等高、水平均分、按比例划分。目前box-flex属性还没有得到firefox、Opera、chrome浏览器的完全支持，但可以使用它们的私有属性定义firefox(-moz)、opera(-0)、chrome/safari（-webkit)。
+        </div>
+    </body>
+</html>
+
