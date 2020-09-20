@@ -101,3 +101,19 @@ inheritProrotype(subType, superType)
 subType.prototype.sayAge = function() {
     console.log(this.age)
 }
+
+//super
+class Parent1 {
+    constructor(name) {
+        this.name = name;
+        this.age = 42;
+    }
+    sayName =  console.log(this.name)
+}
+class Child4 extends Parent1{
+    constructor(height, name) {
+        this.height = height;
+        super(name);
+    }
+}
+let a = new Child4('li', 1.6)
