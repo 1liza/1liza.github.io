@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .circle {
+                width: 200px;
+                height: 200px;
+                background: red;
+                margin: 300px auto;
+                animation: circle 3s linear infinite;
+                transform-origin: center center;
+            }
+
+            @keyframes circle {
+                0% {
+                    transfrom: rotate(0deg)
+                }
+                100% {
+                    transform: rotate(360deg)
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="circle"></div>
+    </body>
+</html>
