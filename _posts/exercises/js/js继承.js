@@ -103,17 +103,21 @@ subType.prototype.sayAge = function() {
 }
 
 //super
-class Parent1 {
+class Parent1{
     constructor(name) {
         this.name = name;
         this.age = 42;
     }
-    sayName =  console.log(this.name)
-}
-class Child4 extends Parent1{
-    constructor(height, name) {
-        this.height = height;
-        super(name);
+    sayName() {
+        console.log(this.name)
     }
 }
-let a = new Child4('li', 1.6)
+
+class Child4 extends Parent1{
+    constructor(name, height) {
+        super(name);//调用super方法，得到this对象
+        this.height = height;
+    }
+}
+let a = new Child1('li', 1.4)
+a.sayName()
