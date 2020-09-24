@@ -18,9 +18,10 @@ function render(template, data) {
  * 
  * exec不需要g全局匹配，每次匹配后返回，并且
  * match如果正则表达式不包含 g 标志，str.match() 将返回与 RegExp.exec(). 相同的结果。
- * replace后面可以跟函数，
+ * replace后面可以跟函数，replace是str方法，全局匹配
  * match
  * 一定记得写括号，[1]是第一个括号匹配的内容
+ * 使用\d \w不要忘记+
  */
 
 function render1(template, data) {

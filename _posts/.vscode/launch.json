@@ -4,6 +4,7 @@
     // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+
         {
             "type": "pwa-chrome",
             "request": "launch",
@@ -11,6 +12,13 @@
             "url": "http://localhost:8081",
             "webRoot": "${workspaceFolder}",
             "file": "${workspaceFolder}/debugger.html"
+        },
+        {
+            "name": "Python: 当前文件",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
         }
     ]
 }
