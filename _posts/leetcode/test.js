@@ -1,5 +1,22 @@
-console.log(fn([2,4,7,3,5,2,8,7]))
+// function curry(fn, length) {
+//     length = length || fn.length;
+//     return function(...args) {
+//         return args.length>=length ? fn.call(this, ...args) : curry(fn.bind(this, ...args), length-args.length)
+//     }
+// }
 
-function fn(arr) {
-    return arr.filter((item, index, array)=>index===array.indexOf(item))
-}
+// const curry = (fn, arr=[])=> (...args)=> {
+
+// }
+
+// function add() {
+//     return curry((a,b,c)=>{
+//         return (a+b+c)
+//     })
+// }
+// const add = curry((a,b,c)=>{
+//     return (a+b+c)
+// })
+// console.log(add(1)(2)(3))
+
+
