@@ -19,4 +19,10 @@
 // })
 // console.log(add(1)(2)(3))
 
-
+function Parent() {
+    this.name='parent';
+    this.male = false;
+}
+function createObj(obj) {
+    let clone = 
+}

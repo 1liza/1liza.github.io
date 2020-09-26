@@ -1,29 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<head></head>
 <body>
     <input id='input'>
 
     <script>
         let input = document.getElementById('input');
-        function debounceAjax(fn, delay) {
+        function throttle(fn, delay) {
+            let last = new Date();
             let time = null;
             return function(value) {
-                clearTimeout(time);
-                time = setTimeout(fn, delay)
+                now = new Date();
+                if (now-last>delay) {
+                    clearTimeout(time);
+                    last = now;
+                    fn.call(this, value);
+                } else {
+                    clearTimeout(time)
+                    time = setTimeout(()=>{
+                        last = now;
+                        fn.call(this, value
+                    )}, delay)
+                }
             }
         }
         function ajax(content) {
             console.log(content)
         }
-        const debounceAjax = debounce(ajax, 500)
-        
+        const throttleAjax = throttle(ajax, 500);
         input.onkeyup = function(e) {
-            debounceAjax(e.target.value)
+            throttleAjax(e.target.value)
         }
     </script>
 </body>
