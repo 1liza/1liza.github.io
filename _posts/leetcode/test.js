@@ -19,10 +19,13 @@
 // })
 // console.log(add(1)(2)(3))
 
-function Parent() {
-    this.name='parent';
-    this.male = false;
-}
-function createObj(obj) {
-    let clone = 
-}
+(function() {
+    try {
+        throw new Error();
+    } catch(x) {
+        var x=1, y=2;
+        console.log(x);
+    }
+    console.log(x);
+    console.log(y);
+})()
