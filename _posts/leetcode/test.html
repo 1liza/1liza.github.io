@@ -7,25 +7,25 @@
     <script>
         let input = document.getElementById('input');
         function throttle(fn, delay) {
-            let last = new Date();
+            let last = Date.now();
             let time = null;
             return function(value) {
-                now = new Date();
-                if (now-last>delay) {
+                let now = Date.now()
+                if(now-last>delay) {
                     clearTimeout(time);
                     last = now;
                     fn.call(this, value);
                 } else {
-                    clearTimeout(time)
-                    time = setTimeout(()=>{
+                    clearTimeout(time);
+                    time = setTimeout(() => {
                         last = now;
-                        fn.call(this, value
-                    )}, delay)
+                        fn.call(this, value);
+                    }, delay);
                 }
             }
         }
         function ajax(content) {
-            console.log(content)
+            console.log(content);
         }
         const throttleAjax = throttle(ajax, 500);
         input.onkeyup = function(e) {
