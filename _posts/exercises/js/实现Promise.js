@@ -21,3 +21,9 @@ myPromise.prototype.then = function(onresolve, onreject) {
     this.onResolved = onresolve
     this.onRejected = onreject
 }
+
+let a = new myPromise((resolve, reject) => {
+    resolve(3)
+}).then((value) => {
+    console.log(value)
+})

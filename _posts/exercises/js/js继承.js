@@ -61,7 +61,8 @@ function createobj(obj) {
  * 寄生式继承，即创建一个仅用于封装继承过程的函数，该函数在内部以某种方式来增强对象，最后再像真地是它做了所有工作一样返回对象。
  */
 function createObj(obj) {
-    var clone = object.create(obj)
+    var clone = Object.create(obj)
+    //Object.create参数是对象
     clone.sayName = function() {
         console.log('hi')
     }
@@ -93,8 +94,8 @@ superType.prototype.sayName = function() {
     console.log(this.name)
 }
 function subType(name, age) {
-    superType.call(this, name)
-    this.age = age
+    superType.call(this, name);
+    this.age = age;
 }
 inheritProrotype(subType, superType)
 
