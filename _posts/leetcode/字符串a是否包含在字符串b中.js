@@ -1,3 +1,7 @@
+/**
+ * 字符串的索引是字符串，不能直接相加
+ * 需要~~i + ~~j
+ */
 let isContain = function(a, b) {
     let flag = false;
     for (let i in b){
